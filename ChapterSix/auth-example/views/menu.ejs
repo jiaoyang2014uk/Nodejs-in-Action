@@ -1,0 +1,14 @@
+<!--代码清单6-27 匿名和已认证的用户的菜单-->
+
+<% if (locals.user) { %>
+    <div id = 'menu'>
+        <span class="name"><%= user.name %></span>
+        <a href='/post'/>Post</a>
+        <a href='/logout'/>Logout</a>
+    </div>
+<% } else { %>
+    <div id = 'menu'>
+        <a href='/login'/>Login</a>
+        <a href='/register'/>Register</a>
+    </div>
+<% } %>
