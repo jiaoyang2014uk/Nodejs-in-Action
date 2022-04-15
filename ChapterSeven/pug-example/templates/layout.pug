@@ -1,0 +1,10 @@
+html 
+    head 
+        - const baseUrl = 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/'
+        block title
+        block style
+        block scripts
+            script(src= baseUrl + 'jquery-ui.js')
+    body
+        block content
+        block footer

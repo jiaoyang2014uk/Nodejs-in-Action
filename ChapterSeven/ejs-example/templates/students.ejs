@@ -1,0 +1,8 @@
+<!--代码清单7-6 渲染学生数组的ejs模版-->
+<% if(students.length) { %>
+    <ul>
+        <% students.forEach(student => { %>
+            <li><%= student.name %> (<%= student.age %>)</li>
+        <% }) %>
+    </ul>
+<% } %>

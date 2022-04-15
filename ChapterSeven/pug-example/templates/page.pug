@@ -1,0 +1,31 @@
+//- extends layout 
+//- block title 
+//-     title Messages
+//- block content
+//-     each message in messages 
+//-         p= message
+
+//- 代码清单7-11 用块追加再追加一个js文件
+extends layout 
+
+block title 
+    title Messages
+
+block style 
+    link(rel='stylesheet', href=baseUrl+ "themes/flick/jquery-ui.css")
+
+block append scripts 
+    script(src= baseUrl + 'jquery-ui.js')
+
+block content
+    count = 0
+    each message in messages 
+        - count = count + 1
+        script 
+            $(function(){
+                $('#message_#{count}').dialog({
+                    height: 140,
+                    modal: true
+                });
+            });
+        != '<div id="message_' + count + '">' + message + '</div>'
